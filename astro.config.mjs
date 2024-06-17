@@ -8,7 +8,8 @@ export const siteUrl = "https://cybernetic-free-version.netlify.app";
 const date = new Date().toISOString();
 // https://astro.build/config
 export default defineConfig({
-    site: siteUrl + "/",
+    site: 'https://dgrifogimeno.github.io',
+    base: '/mediterrania-arrangements',
 
     integrations: [
         react(),

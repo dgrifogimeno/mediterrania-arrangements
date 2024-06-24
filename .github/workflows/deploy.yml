@@ -14,9 +14,18 @@ jobs:
         uses: actions/checkout@v3
 
       - name: Set up Node.js
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
           node-version: 18
+          cache: 'npm'  # Cachear dependencias de npm
+
+      - name: Cache dependencies
+        uses: actions/cache@v3
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
 
       - name: Install dependencies
         run: npm install
@@ -25,8 +34,7 @@ jobs:
         run: npm run build
 
       - name: Deploy to GitHub Pages
-        uses: withastro/action@v2
+        uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          package-manager: npm  # Especifica el gestor de paquetes aquí
-          publish-dir: dist
+          publish_dir: ./dist  # Asegúrate de que esto apunte a la carpeta correcta generada por Astro

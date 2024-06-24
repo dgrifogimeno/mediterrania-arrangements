@@ -10,6 +10,8 @@ import HeroSlider3 from "./hero-slider-03.webp";
 import InfiniteImg1 from "./infinite-img-1.webp";
 import InfiniteImg2 from "./infinite-img-2.webp";
 
+import BackgroundImg1 from "./Designer.jpeg";
+
 export const images = {
     preview: PreviewPng,
     heroImg: HeroImg,
@@ -70,4 +72,5 @@ export {
     HeroSlider3,
     InfiniteImg1,
     InfiniteImg2,
+    BackgroundImg1,
 };

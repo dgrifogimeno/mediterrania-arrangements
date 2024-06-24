@@ -8,6 +8,7 @@ import IconInstagram from "./icon-instagram.svg";
 import IconTwitter from "./icon-twitter.svg";
 import IconLinkedIn from "./icon-linkedin.svg";
 import IconGithub from "./icon-github.svg";
+import BackgroundOne from "./icon-github.svg";
 
 export const icons = {
     arrowDown: IconArrowDown,
